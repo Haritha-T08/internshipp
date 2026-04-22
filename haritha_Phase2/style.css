@@ -1,66 +1,100 @@
+/* Box Model Reset  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Responsive Navigation  */
 .navbar {
-    display: flex;
-    justify-content: space-between; 
+    display: flex; /* [cite: 18] */
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
+    padding: 15px 5%;
+    background-color: #e67e22; /* Orange color from your images */
     color: white;
 }
+
 .nav-links {
     display: flex;
     list-style: none;
 }
 
-.nav-links li {
-    margin-left: 20px;
+.nav-links li { margin-left: 20px; }
+.nav-links a { color: white; text-decoration: none; }
+
+/* Hero Section (Flexbox Layout)  */
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 50px 5%;
+    gap: 30px;
 }
 
-.nav-links a {
+.hero-content { flex: 1; }
+.hero-image img { width: 100%; border-radius: 10px; }
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #c0392b;
     color: white;
     text-decoration: none;
-}
-.flex-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to drop to next line on small screens */
-    gap: 20px;
-    padding: 20px;
+    margin-top: 15px;
 }
 
-.card {
-    flex: 1;
-    min-width: 250px;
-    border: 1px solid #ccc; /* Box model border */
-    padding: 15px; /* Box model padding */
-    margin: 10px; /* Box model margin */
-    background: #f4f4f4;
-}
-.styled-form {
+/* Product List Styling */
+.product-item {
     display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    gap: 10px;
-}
-
-.styled-form input, .styled-form textarea {
-    padding: 10px;
-    border: 2px solid #333;
+    background: white;
+    margin-bottom: 20px;
+    padding: 15px;
     border-radius: 5px;
 }
-/* Tablet Layout (Up to 768px) */
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column; /* Stack items vertically */
-    }
+
+.product-info { margin-left: 20px; }
+
+/* Contact Form Styling  */
+/* Container for the whole page section */
+.contact-section {
+    padding: 50px 20px;
+    text-align: center; /* Centers the "Contact Us" heading */
 }
 
-/* Mobile Layout (Up to 480px) */
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .nav-links {
-        padding: 0;
-        margin-top: 10px;
-    }
+/* The Form - This is the "Flex Container" [cite: 29] */
+.contact-form {
+    display: flex; /* Enables Flexbox [cite: 46] */
+    flex-direction: column; /* Stacks elements vertically  */
+    max-width: 500px; /* Limits width like the model */
+    margin: 0 auto; /* Centers the form on the page */
+    gap: 15px; /* Creates spacing between inputs [cite: 15] */
+}
+
+/* Styling the Inputs and Textarea (The Box Model) [cite: 9] */
+.contact-form input, 
+.contact-form textarea {
+    padding: 12px; /* Inner spacing [cite: 11] */
+    border: 1px solid #ccc; /* Border styling [cite: 11] */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* The "Send" Button */
+.contact-form button {
+    padding: 12px;
+    background-color: #27ae60; /* The green color from the model */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form button:hover {
+    background-color: #219150; /* Darkens slightly when hovered */
 }
