@@ -1,0 +1,66 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to drop to next line on small screens */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid #ccc; /* Box model border */
+    padding: 15px; /* Box model padding */
+    margin: 10px; /* Box model margin */
+    background: #f4f4f4;
+}
+.styled-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    gap: 10px;
+}
+
+.styled-form input, .styled-form textarea {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+/* Tablet Layout (Up to 768px) */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+/* Mobile Layout (Up to 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        padding: 0;
+        margin-top: 10px;
+    }
+}

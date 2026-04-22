@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+
+    display: flex;
+    flex-direction: row;
+
+ justify-content: space-around;
+    background-color: #f0f0f0;
+padding: 20px;
+ border: 2px solid #333;
+
+}
+
+.box {
+    background-color: royalblue;
+    color: white;
+    padding: 40px;
+    width: 25%; 
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        background-color: #d1e7ff; 
+    }
+    
+    .box {
+        width: 40%; 
+        background-color: #2e5cb8;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+        background-color: #d4edda; 
+    }
+
+    .box {
+        width: 80%; 
+        margin: 10px 0;
+        background-color: #28a745;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Design Demo</h1>
+    
+    </header>
+
+    <div class="container">
+        <div class="box">Mobile</div>
+        <div class="box">Tablet</div>
+        <div class="box">Desktop</div>
+    </div>
+
+</body>
+</html>
