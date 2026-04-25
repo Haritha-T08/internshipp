@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Change Task</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+            transition: all 0.3s; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Change the Styles </h2>
+
+    <div id="box">I change colors....</div>
+
+    <button onclick="makeRed()">Make Red</button>
+    <button onclick="makeGreen()">Make Green</button>
+    <button onclick="resetStyle()">Reset</button>
+
+    <script>
+        const myBox = document.getElementById("box");
+        function makeRed() {
+            myBox.style.backgroundColor = "red";
+            myBox.style.color = "white";
+            myBox.style.borderRadius = "20px";
+            myBox.textContent = " Red";
+        }
+
+        
+        function makeGreen() {
+            myBox.style.backgroundColor = "green";
+            myBox.style.color = "white";
+            myBox.style.width = "300px"; 
+            myBox.textContent = " Green";
+        }
+
+        function resetStyle() {
+            myBox.style.backgroundColor = "lightgray";
+            myBox.style.color = "black";
+            myBox.style.width = "200px";
+            myBox.style.borderRadius = "0px";
+            myBox.textContent = "I change color!";
+        }
+    </script>
+
+</body>
+</html>

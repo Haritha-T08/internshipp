@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Text Change</title>
+</head>
+<body>
+
+    <h2 id="mainHeading">Original Text</h2>
+    
+    <button onclick="changeText()">Change Heading</button>
+
+    <script>
+        
+        function changeText() {
+
+            const heading = document.getElementById("mainHeading");
+
+    
+            heading.textContent = "Text has been Updated..";
+
+        
+            heading.style.color = "blue";
+        }
+    </script>
+
+</body>
+</html>
