@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+</head>
+<body>
+
+    <h2>List Manager</h2>
+
+    <input type="text" id="itemInput" placeholder="Enter item name">
+    <button onclick="addItem()">Add Item</button>
+
+    <ul id="myList">
+        <h1><li>Items</li></h1>
+        <li>lion</li>
+        <li>tiger</li>
+    </ul>
+
+    <script>
+    
+        function addItem() {
+            let input = document.getElementById("itemInput");
+            let list = document.getElementById("myList");
+
+            if (input.value !== "") {
+                
+                let li = document.createElement("li");
+                li.textContent = input.value;
+
+            
+                let btn = document.createElement("button");
+                btn.textContent = "Remove";
+                btn.onclick = function() { li.remove(); }; 
+                
+                li.appendChild(btn);
+                list.appendChild(li); 
+                
+                input.value = ""; 
+            }
+        }
+    </script>
+
+</body>
+</html>
