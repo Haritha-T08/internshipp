@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h3>Even or Odd </h3>
+    <p id="result"></p>
+
+    <script>
+    
+    const myName = "Intern"; 
+        let Number = 5;       
+
+ 
+        function checkNumber(n) {
+            if (n % 2 === 0) {
+                return n + " is Even";
+            } else {
+                return n + " is Odd";
+            }
+        }
+        
+        
+        document.getElementById("result").textContent = checkNumber(Number);
+    
+       
+    </script>
+
+</body>
+</html>
