@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h3>My Items List</h3>
+    <ul id="myList"></ul>
+
+    <script>
+        
+        const items = ["Laptop", "Mouse", "Keyboard", "Monitor"];
+
+    
+        const listContainer = document.getElementById("myList");
+
+        items.forEach(function(singleItem) {
+
+            let li = document.createElement("li");
+            
+            li.textContent = singleItem;
+            
+        
+            listContainer.appendChild(li);
+        });
+    </script>
+
+</body>
+</html>

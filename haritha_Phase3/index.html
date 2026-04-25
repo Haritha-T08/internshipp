@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <title>Even or odd</title>
+<head>
+    <title>Even or Odd</title>
+</head>
 <body>
-<head
-    <h3>Even or Odd </h3>
+
+    <h2>Even or Odd</h2>
+    
+    <input type="number" id="userInput" placeholder="Enter a number">
+    
+    <button onclick="checkEvenOdd()">Check</button>
+
     <p id="result"></p>
 
     <script>
     
-    const myName = "Intern"; 
-        let Number = 5;       
+        function checkEvenOdd() {
+        
+            let n = document.getElementById("userInput").value;
+            
+        
+            let display = document.getElementById("result");
 
- 
-        function checkNumber(n) {
+        
+            if (n === "") {
+                display.textContent = "Please enter a number";
+                return;
+            }
+
+        
             if (n % 2 === 0) {
-                return n + " is Even";
+                display.textContent = n + " is an Even number.";
             } else {
-                return n + " is Odd";
+                display.textContent = n + " is an Odd number.";
             }
         }
-        
-        
-        document.getElementById("result").textContent = checkNumber(Number);
-    
-       
     </script>
 
 </body>
-</head>
 </html>
