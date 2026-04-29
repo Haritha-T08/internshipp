@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Min Length Validation</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .error { color: red; font-size: 14px; display: block; margin-top: 5px; }
+        .success { color: green; font-weight: bold; }
+        input { display: block; margin-bottom: 5px; padding: 8px; width: 250px; }
+    </style>
+</head>
+<body>
+
+    <h2>Login Validation </h2>
+
+    <form id="Form">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Min 5 characters">
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Min 6 characters">
+
+        <button type="submit">Login</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        const form = document.getElementById("Form");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+        
+            if (user === "" || pass === "") {
+                message.textContent = "Error: All fields are required!";
+                message.className = "error";
+            } 
+            
+            else if (user.length < 5) {
+                message.textContent = "Error: Username must be at least 5 characters.";
+                message.className = "error";
+            }
+        
+            else if (pass.length < 6) {
+                message.textContent = "Error: Password must be at least 8 characters.";
+                message.className = "error";
+            }
+        
+            else {
+                message.textContent = " Validation passed.";
+                message.className = "success";
+            }
+        });
+    </script>
+
+</body>
+</html>

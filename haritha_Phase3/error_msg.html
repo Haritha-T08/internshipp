@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Error Message </title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        
+        .input-error { border: 2px solid red;  }
+        
+        .error-text { 
+            color: red; 
+            font-size: 12px; 
+            display: none; 
+            margin-bottom: 10px;
+        }
+        
+        .success-text { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Login Validation</h2>
+
+    <form id="Form">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <span id="userError" class="error-text">Username is required</span>
+
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <span id="passError" class="error-text">Password must be at least 6 characters</span>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="finalStatus"></p>
+
+    <script>
+        const loginForm = document.getElementById("Form");
+
+        loginForm.addEventListener("submit", function(event) {
+    
+            event.preventDefault();
+
+            const userField = document.getElementById("username");
+            const passField = document.getElementById("password");
+            const userError = document.getElementById("userError");
+            const passError = document.getElementById("passError");
+            const status = document.getElementById("finalStatus");
+
+            let isValid = true;
+            if (userField.value.trim() === "") {
+                userError.style.display = "block"; 
+                userField.classList.add("input-error"); 
+                isValid = false;
+            } else {
+                userError.style.display = "none"; 
+                userField.classList.remove("input-error");
+            }
+            if (passField.value.length < 6) {
+                passError.style.display = "block"; 
+                passField.classList.add("input-error"); 
+                isValid = false;
+            } else {
+                passError.style.display = "none"; 
+                passField.classList.remove("input-error");
+            }
+            if (isValid) {
+                status.textContent = "Form Submitted Successfully!";
+                status.className = "success-text";
+            } else {
+                status.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
