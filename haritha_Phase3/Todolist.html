@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List </title>
+    <style>
+    
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: linear-gradient(135deg, pink 0%, blue 100%); 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .todo-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+
+        h2 { text-align: center; color: black; }
+
+        .input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        
+        input { flex: 1; padding: 10px; border: 2px solid  black; border-radius: 5px; outline: none; }
+        input:focus { border-color: pink; }
+
+        .add-btn { background: violet; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+        ul { list-style: none; padding: 0; }
+
+        li { 
+            background: pink; 
+            margin-bottom: 10px; 
+            padding: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-radius: 5px;
+            border-left: 5px solid slategrey;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .actions { display: flex; gap: 5px; }
+
+        .edit-btn { background: yellow; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; color: black; font-weight: bold; }
+        .del-btn { background: black; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="todo-box">
+    <h2>To do list</h2>
+    <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Enter task...">
+        <button class="add-btn" id="addBtn">Add Task</button>
+    </div>
+    <ul id="List"></ul>
+</div>
+
+<script>
+    const addBtn = document.getElementById("addBtn");
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("List");
+
+    addBtn.addEventListener("click", function() {
+        const text = taskInput.value.trim();
+        
+        if (text === "") {
+            alert("Please type something");
+            return;
+        }
+
+    
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.textContent = text;
+        li.appendChild(span);
+
+        const actionsDiv = document.createElement("div");
+        actionsDiv.className = "actions";
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.className = "edit-btn";
+        editBtn.onclick = function() {
+            const newValue = prompt("Update your task:", span.textContent);
+            if (newValue !== null && newValue.trim() !== "") {
+                span.textContent = newValue;
+            }
+        };
+
+    
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.className = "del-btn";
+        delBtn.onclick = function() {
+            li.remove();
+        };
+
+        actionsDiv.appendChild(editBtn);
+        actionsDiv.appendChild(delBtn);
+        li.appendChild(actionsDiv);
+        taskList.appendChild(li);
+
+        taskInput.value = "";
+    });
+</script>
+
+</body>
+</html>

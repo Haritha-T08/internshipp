@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic List </title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .input-box { margin-bottom: 15px; }
+        input { padding: 8px; width: 200px; }
+        button { padding: 8px 12px;  }
+        ul { margin-top: 15px; }
+        li { padding: 5px; border-bottom: 1px solid plum; width: 200px; }
+    </style>
+</head>
+<body>
+
+    <h2>Add Items to List</h2>
+
+    <div class="input-box">
+        <input type="text" id="itemInput" placeholder="Enter item name...">
+        <button id="addBtn">Add Item</button>
+    </div>
+
+    <ul id="dynamicList"></ul>
+
+    <script>
+    
+        const addBtn = document.getElementById("addBtn");
+        const itemInput = document.getElementById("itemInput");
+        const listContainer = document.getElementById("dynamicList");
+
+    
+        addBtn.addEventListener("click", function() {
+            const text = itemInput.value.trim();
+
+        
+            if (text !== "") {
+                
+                const li = document.createElement("li");
+                li.textContent = text;
+                listContainer.appendChild(li);
+
+                itemInput.value = "";
+                itemInput.focus();
+            } else {
+                alert("Please type something first!");
+            }
+        });
+    </script>
+
+</body>
+</html>
