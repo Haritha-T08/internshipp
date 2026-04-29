@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Button </title>
+    <style>
+    
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: white;
+            color: black;
+            transition: all 0.4s ease; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+        }
+
+
+        body.dark-mode {
+            background-color: grey;
+            color: #ecf0f1;
+        }
+
+        .dark-mode .container {
+            border-color: grey;
+            background-color: paleturquoise;
+        }
+
+
+        #toggleBtn {
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 30px;
+            background-color: violet;
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        #toggleBtn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>color change</h2>
+        <p>Click the button below to toggle between Light and Dark mode.</p>
+        <button id="toggleBtn">Switch to Dark Mode</button>
+    </div>
+
+    <script>
+        
+        const btn = document.getElementById("toggleBtn");
+        const bodyElement = document.body;
+
+
+        btn.addEventListener("click", function() {
+            
+
+            bodyElement.classList.toggle("dark-mode");
+
+            if (bodyElement.classList.contains("dark-mode")) {
+                btn.textContent = "Switch to Light Mode";
+                btn.style.backgroundColor = "yellow"; 
+                btn.style.color = "black";
+            } else {
+                btn.textContent = "Switch to Dark Mode";
+                btn.style.backgroundColor = "pink"; 
+                btn.style.color = "white";
+            }
+        });
+    </script>
+
+</body>
+</html>
