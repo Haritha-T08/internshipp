@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Preview </title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #displayBox { 
+            padding: 10px; 
+            border: 2px  pink; 
+            margin-top: 10px;
+            min-height: 20px;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h2> display live preview</h2>
+    
+    <label for="userType">Type something:</label><br>
+    <input type="text" id="userType" placeholder="Start typing...">
+
+    <div id="displayBox">Your preview will show here...</div>
+
+    <script>
+        const inputField = document.getElementById("userType");
+        const display = document.getElementById("displayBox");
+
+        inputField.addEventListener("input", function() {
+            
+            if (inputField.value === "") {
+                display.textContent = "Your preview will show here...";
+            } else {
+    
+                display.textContent = inputField.value;
+            }
+        });
+    </script>
+
+</body>
+</html>

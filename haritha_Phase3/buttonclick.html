@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>button click text change</title>
+    </head>
+    <body>
+        <h1 id="message">when you click a button it will change the text of sample paragraph </h1>
+    <button id="text"> click here</button>
+    <script>
+        const btn = document.getElementById("text");
+    const display = document.getElementById("message");
+
+
+    btn.addEventListener("click", function() {
+        display.textContent = "You clicked the button and I am a new paragraph!";
+    });
+    </script>
+
+</body>
+</html>

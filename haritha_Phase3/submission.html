@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .form-container { width: 300px; padding: 20px; border: 1px solid moccasin; }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        #message { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h3>Login Form</h3>
+        <form id="Form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit">Submit</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById("Form");
+        const msg = document.getElementById("message");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (user == "" || pass == "") {
+                msg.textContent = "Error: All fields are required!";
+                msg.style.color = "red";
+            } else {
+                msg.textContent = "Success: Form submitted!";
+                msg.style.color = "green";
+                form.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
